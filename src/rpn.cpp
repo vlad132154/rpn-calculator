@@ -73,6 +73,8 @@ double evaluate_rpn(const std::string& expression) {
                 result = a / b;
             } else if (token == "^") {
                 result = std::pow(a, b);
+            } else if (token == "%"){
+                result = std::fmod(a, b);
             } else {
                 throw std::invalid_argument("Invalid operator: '" + token + "'");
             }
